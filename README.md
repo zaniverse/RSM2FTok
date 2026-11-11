@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="225" src="projects/rsm2ftok/figs/logo.png">
+  <img width="300" src="projects/rsm2ftok/figs/logo.png">
 </p>
 
 <h2 align="center">From Masks to Language: A Remote Sensing Mask Tokenizer for Pixel-wise Earth Observation Foundation Models</h2>
@@ -10,12 +10,15 @@
 </p>
 
 <p align="center">
-  <a>Yujie Zan</a><sup>a</sup>, <a>Yikang Zhou</a><sup>a</sup>, <a>Tao Zhang</a><sup>a</sup>, <a>Dengxian Gong</a><sup>a</sup>, <a>Muying Luo</a><sup>b</sup>, <a>Wenling Yu</a><sup>c</sup>, <a>Kourosh Khoshelham</a><sup>d</sup>, <a>Shunping Ji</a><sup>a,*</sup>
-  <p align="center"><sup>a</sup>School of Remote Sensing and Information Engineering, Wuhan University, Wuhan 430079, China<br><sup>b</sup>School of Electrical Engineering, Guangxi University, Nanning 530004, China<br><sup>c</sup>School of Mechanical and Electrical Engineering, Jingdezhen Ceramic University, Jingdezhen 333403, China<br><sup>d</sup>Department of Infrastructure Engineering, The University of Melbourne, Parkville, VIC 3010, Australia</p>
+  <a>Yujie Zan</a><sup>a</sup>, <a>Yikang Zhou</a><sup>a</sup>, <a>Tao Zhang</a><sup>a</sup>, <a>Dengxian Gong</a><sup>a</sup>, <a>Muying Luo</a><sup>b</sup>, <a>Wenling Yu</a><sup>c</sup>, <a>Kourosh Khoshelham</a><sup>d</sup>, <a>Shunping Ji</a><sup>a,✉️</sup>
+  <p align="center"><sup>a</sup>Wuhan University<br><sup>b</sup>Guangxi University<br><sup>c</sup>Jingdezhen Ceramic University<br><sup>d</sup>The University of Melbourne</p>
 </p>
 
 <p align="center"><img width="850" src="projects/rsm2ftok/figs/model.png"></p>
-<p align="center">The architecture of the proposed RSM2FTok.</p>
+<p align="center"><strong>The architecture of the proposed RSM2FTok.</strong></p>
+
+<p align="center"><img width="850" src="projects/rsm2ftok/figs/TokLLM.png"></p>
+<p align="center"><strong>The unified pixel-wise EO-MLLM framework TokLLM integrating RSM2FTok with Qwen-VL.</strong></p>
 
 ## Opensource progress
 
@@ -41,11 +44,21 @@ The released tokenizer checkpoint is available at [koreyoshieo/RSM2FTok](https:/
 
 ## Environment
 
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-uv sync --extra=vlm --extra=tokenizer
-source .venv/bin/activate
+1. **Install the project dependencies.** `uv sync` creates or updates the project environment from the lockfile and installs both VLM and tokenizer requirements.
 
+```bash
+uv sync --extra=vlm --extra=tokenizer
+```
+
+2. **Activate the project environment.**
+
+```bash
+source .venv/bin/activate
+```
+
+3. **Install Detectron2 and compile the Mask2Former operators.**
+
+```bash
 git clone https://github.com/facebookresearch/detectron2.git detectron2
 uv pip install -e detectron2 --no-build-isolation
 
