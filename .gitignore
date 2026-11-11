@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+.uv/
+detectron2/
+work_dirs/
+outputs/
+output/
+*.pth
+*.pt
+*.safetensors
+cache/
+wandb/
+test_output/
