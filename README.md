@@ -33,14 +33,14 @@
 
 | Model | Checkpoint | Description |
 |:-:|:-:|:-:|
-| Qwen3-VL-2B-Tok | [Link]() | Jointly trained on 15 remote-sensing segmentation datasets and the RefCOCO family. |
-| Qwen2.5-VL-3B-Tok | [Link]() | Jointly trained on 15 remote-sensing segmentation datasets and the RefCOCO family. |
-| Qwen3-VL-2B-Tok-rl | [Link]() | Further GRPO-trained from Qwen3-VL-2B-Tok on mask generation; recommended for segmentation. |
-| Qwen2.5-VL-3B-Tok-rl | [Link]() | Further GRPO-trained from Qwen2.5-VL-3B-Tok on mask generation; recommended for segmentation. |
-| Qwen3-VL-2B-Tok-cd | [Link]() | Further mixed training on change detection and landslide mapping. |
-| Qwen3-VL-2B-Tok-cd-rl | [Link]() | Further GRPO-trained from Qwen3-VL-2B-Tok-cd; recommended for change detection. |
+| Qwen3-VL-2B-Tok | [🤗 Link](https://huggingface.co/koreyoshieo/Qwen3-VL-2B-RSM2FTok) | Jointly trained on 15 remote-sensing segmentation datasets and the RefCOCO family. |
+| Qwen2.5-VL-3B-Tok | [🤗 Link](https://huggingface.co/koreyoshieo/Qwen2.5-VL-3B-RSM2FTok) | Jointly trained on 15 remote-sensing segmentation datasets and the RefCOCO family. |
+| Qwen3-VL-2B-Tok-rl | [🤗 Link](https://huggingface.co/koreyoshieo/Qwen3-VL-2B-RSM2FTok-rl) | Further GRPO-trained from Qwen3-VL-2B-Tok on mask generation; recommended for segmentation. |
+| Qwen2.5-VL-3B-Tok-rl | [🤗 Link](https://huggingface.co/koreyoshieo/Qwen2.5-VL-3B-RSM2FTok-rl) | Further GRPO-trained from Qwen2.5-VL-3B-Tok on mask generation; recommended for segmentation. |
+| Qwen3-VL-2B-Tok-cd | [🤗 Link](https://huggingface.co/koreyoshieo/Qwen3-VL-2B-RSM2FTok-cd) | Further mixed training on change detection and landslide mapping. |
+| Qwen3-VL-2B-Tok-cd-rl | [🤗 Link](https://huggingface.co/koreyoshieo/Qwen3-VL-2B-RSM2FTok-cd-rl) | Further GRPO-trained from Qwen3-VL-2B-Tok-cd; recommended for change detection. |
 
-The released tokenizer checkpoint is available at [koreyoshieo/RSM2FTok](https://huggingface.co/koreyoshieo/RSM2FTok).
+The released tokenizer checkpoint is available at [🤗 Link](https://huggingface.co/koreyoshieo/RSM2FTok).
 
 ## Environment
 
