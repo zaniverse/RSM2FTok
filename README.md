@@ -11,7 +11,7 @@
 
 <p align="center">
   <a>Yujie Zan</a><sup>a</sup>, <a>Yikang Zhou</a><sup>a</sup>, <a>Tao Zhang</a><sup>a</sup>, <a>Dengxian Gong</a><sup>a</sup>, <a>Muying Luo</a><sup>b</sup>, <a>Wenling Yu</a><sup>c</sup>, <a>Kourosh Khoshelham</a><sup>d</sup>, <a>Shunping Ji</a><sup>a,✉️</sup>
-  <p align="center"><sup>a</sup>Wuhan University<br><sup>b</sup>Guangxi University<br><sup>c</sup>Jingdezhen Ceramic University<br><sup>d</sup>The University of Melbourne</p>
+  <p align="center"><sup>a</sup>Wuhan University; <sup>b</sup>Guangxi University; <sup>c</sup>Jingdezhen Ceramic University; <sup>d</sup>The University of Melbourne</p>
 </p>
 
 <p align="center"><img width="850" src="projects/rsm2ftok/figs/model.png"></p>
@@ -22,7 +22,7 @@
 
 ## Opensource progress
 
-- ⏳ Release model weights.
+- ✅ Release model weights.
 - ⏳ Release TokLLM evaluation codes.
 - ⏳ Release Gradio demo codes.
 - ⏳ Release tokenizer training codes.
@@ -44,10 +44,10 @@ The released tokenizer checkpoint is available at [🤗 Link](https://huggingfac
 
 ## Environment
 
-1. **Install the project dependencies.** `uv sync` creates or updates the project environment from the lockfile and installs both VLM and tokenizer requirements.
+1. **Install the project dependencies.** `uv sync --inexact` creates or updates the project environment from the lockfile and installs both VLM and tokenizer requirements while preserving the separately installed local Detectron2 package.
 
 ```bash
-uv sync --extra=vlm --extra=tokenizer
+uv sync --inexact --extra=vlm --extra=tokenizer
 ```
 
 2. **Activate the project environment.**
@@ -74,6 +74,22 @@ Please refer to [TRAIN_TOKENIZER.md](projects/rsm2ftok/docs/TRAIN_TOKENIZER.md) 
 Please refer to [TRAIN_VLM.md](projects/rsm2ftok/docs/TRAIN_VLM.md) for TokLLM training.
 
 We implement the RL code based on [Easy-R1](https://github.com/hiyouga/EasyR1), with the only modification lying in the reward design. Please refer to `rl/reward_function/text2mask_seg_16tk.py` for details. The RL launch script will be provided with the RL release.
+
+## Evaluation
+
+Evaluate the Qwen3-VL SFT model on the BSB semantic-segmentation example:
+
+```bash
+python projects/rsm2ftok/evaluation/qwen3vl_rs/qwen3vl_refsemseg_eval.py \
+  --output_dir test_output/qwen3vl_refsemseg_bsb
+```
+
+Evaluate the Qwen3-VL RL model on the same example:
+
+```bash
+python projects/rsm2ftok/evaluation/qwen3vl_rs_rl/qwen3vl_refsemseg_rl_eval.py \
+  --output_dir test_output/qwen3vl_refsemseg_rl_bsb
+```
 
 ## Acknowledgement
 
